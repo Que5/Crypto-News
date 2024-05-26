@@ -3,6 +3,7 @@ import requests
 
 # Set the page configuration
 st.set_page_config(layout='wide')
+st.header(f"Crypto News")
 
 # Fetch data from the API
 topic = "cryptocurrency"
@@ -14,7 +15,6 @@ content = response.json()
 
 # Display up to 5 articles
 for i, article in enumerate(content["articles"][:5]):
-    st.header(f"Crypto News")
     st.subheader(article["title"])
     st.write(article["description"])
     
